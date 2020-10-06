@@ -1,2 +1,4 @@
 # Hotel-Reservation
-Modified to UC 1 - Create hotel object and add to list
+Modified to UC 2 - Find the cheapest Hotel for a given Date Range
+
+Case:Regular Customer Type (added as default)
