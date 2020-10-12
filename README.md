@@ -1,2 +1,2 @@
 # Hotel-Reservation
-Modified to UC 7 - Find max rated hotel for date range
+Modified to UC 9 - Add Reward Weekday/Weekend rates to customer type=reward
