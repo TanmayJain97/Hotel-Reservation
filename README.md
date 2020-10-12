@@ -1,4 +1,2 @@
 # Hotel-Reservation
-Modified to UC 2 - Find the cheapest Hotel for a given Date Range
-
-Case:Regular Customer Type (added as default)
+Modified to UC 3 - Add Weekday and Weekend Rates of Hotel
