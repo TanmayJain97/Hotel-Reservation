@@ -1,55 +1,65 @@
 package com.hotel_reservation;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+public class HotelObject {
 
-import org.junit.Before;
-import org.junit.Test;
+	public String hotelName;				//Obj Attributes
+	public int rating;
+	public int rateWeekdayRegular;
+	public int rateWeekendRegular;
+	public int totalBill=0;
 
-public class HotelReservationTest {
-	
-	private HotelReservationUC3 hotelReservation;
-	private Customer cust;
-	
-	@Before
-	public void init() {
-		hotelReservation = new HotelReservationUC3();
-		hotelReservation.addHotel("Lakewood", 110,90);
-    	hotelReservation.addHotel("Bridgewood", 160,50);
-    	hotelReservation.addHotel("Ridgewood", 220,150);
+	//Constructor
+	public HotelObject(String hotelName, int rate_regular) {
+		this.hotelName = hotelName;
+		this.rateWeekdayRegular = rate_regular;
 	}
-    
-	//Testing for creation of 3 hotels
-	@Test
-    public void whenLakewoodAdded_ShouldReturnTrue()
-    {	
-        assertTrue(hotelReservation.addHotel("Lakewood",110,90));
-    }
+
+	public HotelObject(String hotelName) {
+		this.hotelName = hotelName;
+	}
+
+	@Override
+	public String toString() {
+		return "Hotel Object "+hotelName+" created";
+	}
+
+	public void setWeekendRates(int rateWeekend) {
+		this.rateWeekendRegular=rateWeekend;
+		System.out.println("Weekend Rates Updated");
+	}
 	
-	@Test
-    public void whenBridgewoodAdded_ShouldReturnTrue()
-    {	
-        assertTrue(hotelReservation.addHotel("Bridgewood", 160,50));
-    }
+	public void addRating(int rating) {
+		this.rating=rating;
+		System.out.println("Rating "+rating+" stars added.");
+	}
 	
-	@Test
-    public void whenRidgewoodAdded_ShouldReturnTrue()
-    {	
-        assertTrue(hotelReservation.addHotel("Ridgewood", 220,150));
-    }
-	
-	//Testing for correct output for staying 1 day
-	@Test
-    public void whenStayed1Day_CheapestHotelShouldBe_Lakewood()
-    {	
-		cust=hotelReservation.findCheapestHotel("12.05.2020", "13.05.2020");
-        assertEquals(110, cust.getBill());
-    }
-	
-	@Test
-    public void whenStayed1Day_CheapestHotelShouldCost_110()
-    {	
-		cust=hotelReservation.findCheapestHotel("12.05.2020", "13.05.2020");
-        assertEquals("Lakewood", cust.getHotelName());
-    }
+	public void display() {				//Method for displaying all details
+
+		System.out.println("------------------------------------------------------");
+		System.out.println("Hotel Name: "+hotelName);
+		System.out.println("Regular Weekday Rate: "+rateWeekdayRegular);
+		System.out.println("Regular Weekend Rate: "+rateWeekendRegular);
+		System.out.println("------------------------------------------------------");
+		System.out.println();
+	}
+
+	public String getHotelName() {
+		return hotelName;
+	}
+
+	public void setHotelName(String hotelName) {
+		this.hotelName = hotelName;
+	}
+
+	public int getrateWeekdayRegular() {
+		return rateWeekdayRegular;
+	}
+
+	public void setrateWeekdayRegular(int rate_regular) {
+		this.rateWeekdayRegular = rate_regular;
+	}
+
+	public int getTotalBill() {
+		return totalBill;
+	}
 }
