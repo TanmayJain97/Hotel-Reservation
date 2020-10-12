@@ -1,2 +1,2 @@
 # Hotel-Reservation
-Modified to UC 9 - Add Reward Weekday/Weekend rates to customer type=reward
+Modified to UC 10 - Find cheapest best rated hotel for a date range for reward cust
